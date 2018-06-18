@@ -18,7 +18,7 @@
 
 mvls.Mclust<-function(data, imp.method='mean', G=1:9){
   data<-exclude(data)
-  data.pi<-na.omit(preimputation(data,imp.method))
+  data.pi<-preimputation(data,imp.method)
   result<-Mclust(data.pi,G)
   clusterCut<-result$classification
   plot(result, what = "classification")
